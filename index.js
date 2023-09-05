@@ -1,6 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import Post from "./post.js"
+// import Post from "./post.js"
 
 const PORT = 5000
 const DB_URL = 'mongodb+srv://userIvan:user@cluster0.6bbbifd.mongodb.net/?retryWrites=true&w=majority'
@@ -10,8 +10,8 @@ const app = express()
  app.use(express.json())
 
 app.post('/', async (req, res) => {
-     const {author, title, content, picture} = req.body
-     const post = await Post.create({author, title, content, picture})
+     // const {author, title, content, picture} = req.body
+     // const post = await Post.create({author, title, content, picture})
     console.log(req.body)
     res.status(200).json('Server Working')
 })
