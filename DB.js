@@ -4,5 +4,5 @@ const DB_URL = 'mongodb+srv://userIvan:user@cluster0.6bbbifd.mongodb.net/?retryW
 main().catch(err => console.log(err));
 
 async function main(){
-    await mongoose.connect(DB_URL);
+    await mongoose.connect(DB_URL, {useUnifiedTopology: true, useNewUrlParser: true });
 }

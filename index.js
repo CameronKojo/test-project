@@ -9,11 +9,14 @@ const app = express()
  app.use(express.json())
 
 app.post('/', async (req, res) => {
-     const {author, title, content, picture} = req.body
-    console.log(author, title, content, picture)
-     const post = await Post.create({author, title, content, picture})
-    console.log(req.body)
-    res.status(200).json('Server Working')
+    try {
+        const {author, title, content, picture} = req.body
+        console.log(author, title, content, picture)
+        const post = await Post.create({author, title, content, picture})
+        res.status(200).json(post)
+    } catch (e) {
+        res.status(500).json(e)
+    }
 })
 
 //  async function startApp() {
